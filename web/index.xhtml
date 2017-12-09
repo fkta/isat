@@ -10,6 +10,13 @@
         <h:form>
             <h:commandButton value="全件検索" action="#{gb.getNext()}"/>
         </h:form>
+        
+        <h:form enctype="multipart/form-data">
+            <h:outputLabel value="あっぷろーど"/><br />
+            <h:inputFile value="#{gb.file}" /><br />
+            <h:commandButton value="Upload" action="#{gb.submit()}"/><br />
+            <h:outputText id="fileName" value="#{gb.file == null ? '' : gb.file.submittedFileName}" />
+        </h:form>
     </h:body>
 </html>
 
