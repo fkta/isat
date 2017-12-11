@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bean;
 
 import ejb.GuranFacade;
@@ -11,21 +6,26 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.inject.Named;
-import javax.enterprise.context.*;
 import javax.servlet.http.Part;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
 
-@Named(value = "gb")
-@RequestScoped
-public class GuranBean {
-    @NotNull
+/**
+ *
+ * @author glowo
+ */
+@Named(value = "ngb")
+@SessionScoped
+public class NewGuranBean implements Serializable {
+@NotNull
     private int id;
     private String name;
     private Part file;

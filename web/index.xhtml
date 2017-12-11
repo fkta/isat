@@ -14,8 +14,16 @@
         <h:form enctype="multipart/form-data">
             <h:outputLabel value="あっぷろーど"/><br />
             <h:inputFile value="#{gb.file}" /><br />
-            <h:commandButton value="Upload" action="#{gb.submit()}"/><br />
+            <h:commandButton value="Upload" action="#{gb.userAdd()}"/><br />
             <h:outputText id="fileName" value="#{gb.file == null ? '' : gb.file.submittedFileName}" />
+        </h:form>
+        
+        <h:dataTable value="#{gb.list}" var="g">
+            <h:column>#{g.id}</h:column>
+            <h:column>#{g.name}</h:column>
+        </h:dataTable>
+        <h:form>
+            <h:commandButton value="反映する" action="#{gb.comit()}"/>
         </h:form>
     </h:body>
 </html>
